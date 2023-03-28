@@ -1,4 +1,4 @@
-package com.softclub.service;
+package com.softclub.service.impl;
 
 
 import com.softclub.dto.ItemData;
@@ -6,16 +6,19 @@ import com.softclub.entity.ProductItem;
 import com.softclub.repository.ProductRepository;
 import com.softclub.entity.Product;
 import com.softclub.exception.ProductException;
-import com.softclub.service.impl.ProduceService;
+import com.softclub.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class ProductServiceJpa implements ProduceService {
 
+@Service
+public class ProductServiceJpa implements ProductService {
+
+    @Autowired
     private ProductRepository repository;
 
     public long createProduct(Product product){
@@ -38,9 +41,10 @@ public class ProductServiceJpa implements ProduceService {
         return repository.findAll();
     }
 
+//    @Transactional
     public Product addItems(long id, List<ItemData> items) {
         return repository
-            .findById(id)
+            .findByIdWithItems(id)
             .map(p -> {
                 items
                     .stream()

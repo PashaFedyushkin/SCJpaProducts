@@ -1,7 +1,10 @@
 package com.softclub.entity;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -17,6 +20,7 @@ public class Product {
     private Long productId;
     private String productName;
 
+
     @OneToMany(
             mappedBy = "product",
             cascade = CascadeType.ALL,
@@ -25,11 +29,6 @@ public class Product {
     private List<ProductItem> productItems;
 
     public Product (String productName){
-        this.productName = productName;
-    }
-
-    public Product (long productId, String productName){
-        this.productId = productId;
         this.productName = productName;
     }
 

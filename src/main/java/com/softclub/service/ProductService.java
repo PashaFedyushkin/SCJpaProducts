@@ -1,11 +1,11 @@
-package com.softclub.service.impl;
+package com.softclub.service;
 
 import com.softclub.dto.ItemData;
 import com.softclub.entity.Product;
 
 import java.util.List;
 
-public interface ProduceService {
+public interface ProductService {
 
     long createProduct(Product product);
 

@@ -2,7 +2,7 @@ package com.softclub.controller;
 
 import com.softclub.dto.ItemData;
 import com.softclub.entity.Product;
-import com.softclub.service.impl.ProduceService;
+import com.softclub.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 public class ProductController {
 
-    private final ProduceService productService;
+    private final ProductService productService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

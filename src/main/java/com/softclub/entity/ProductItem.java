@@ -15,7 +15,7 @@ public class ProductItem {
     @GeneratedValue
     private Long itemId;
     private long inventoryNumber;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id")
     private Product product;
 
