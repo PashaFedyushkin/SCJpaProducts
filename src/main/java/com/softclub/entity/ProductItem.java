@@ -12,10 +12,12 @@ import lombok.*;
 @Table(name = "product_items")
 public class ProductItem {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_items_seq")
+    @SequenceGenerator(name = "product_items_seq", sequenceName = "product_items_seq", allocationSize = 1)
+
     private Long itemId;
     private long inventoryNumber;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private Product product;
 

@@ -35,10 +35,12 @@ public class Application {
                 System.out.println(p.getProductName());
             }
             List<ItemData> itemDataList = new ArrayList<>();
-            itemDataList.add(new ItemData(1234));
-            itemDataList.add(new ItemData(4321));
+            itemDataList.add(new ItemData(10010323));
+            itemDataList.add(new ItemData(10020323));
+            itemDataList.add(new ItemData(10030323));
+            itemDataList.add(new ItemData(10040323));
             productController.addItems(id1, itemDataList);
-            productController.addItems(id1, itemDataList);
+            productController.addItems(id2, itemDataList);
         };
     }
 }

@@ -41,7 +41,7 @@ public class ProductServiceJpa implements ProductService {
         return repository.findAll();
     }
 
-//    @Transactional
+
     public Product addItems(long id, List<ItemData> items) {
         return repository
             .findByIdWithItems(id)
