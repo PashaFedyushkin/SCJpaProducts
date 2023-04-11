@@ -7,6 +7,7 @@ import com.softclub.repository.ProductRepository;
 import com.softclub.entity.Product;
 import com.softclub.exception.ProductException;
 import com.softclub.service.ProductService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -16,9 +17,9 @@ import java.util.Optional;
 
 
 @Service
+@RequiredArgsConstructor
 public class ProductServiceJpa implements ProductService {
 
-    @Autowired
     private ProductRepository repository;
 
     public long createProduct(Product product){
@@ -40,7 +41,6 @@ public class ProductServiceJpa implements ProductService {
     public List<Product> getAll() {
         return repository.findAll();
     }
-
 
     public Product addItems(long id, List<ItemData> items) {
         return repository

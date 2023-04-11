@@ -33,6 +33,7 @@ public class Product {
         this.productName = productName;
     }
 
+
     public void addProductItem (ProductItem productItem){
         productItems.add(productItem);
         productItem.setProduct(this);

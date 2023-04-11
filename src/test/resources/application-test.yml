@@ -1,15 +1,15 @@
 spring:
+  h2:
+    console:
+      enabled: true
   datasource:
     url: jdbc:h2:file:/data/test;MODE=PostgreSQL
     username:
     password:
+
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-  flyway:
-    enabled: true
-    url: jdbc:h2:file:/data/test;MODE=PostgreSQL
-    user:
-    password:
-    locations: "classpath:migration"
-    baseline-on-migrate: true
-    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      data-locations: data.sql
+      schema-locations: schema.sql

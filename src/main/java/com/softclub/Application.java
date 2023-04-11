@@ -22,7 +22,7 @@ public class Application {
         SpringApplication.run(Application.class);
     }
 
-   /* @Bean
+    /*@Bean
     public CommandLineRunner demo(ProductController productController) {
 
         return (args) -> {
@@ -62,6 +62,7 @@ public class Application {
             itemDataList4.add(new ItemData(10150323));
             itemDataList4.add(new ItemData(10160323));
             productController.addItems(id4, itemDataList4);
+
         };
     }*/
 }
